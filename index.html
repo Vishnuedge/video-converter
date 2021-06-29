@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Video Converter</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" 
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+      <link rel="stylesheet" type='text/css' href="public/css/style.css">
+      <style>
+      input{
+            color: red;
+            font-size: bold;
+            cursor: pointer;
+        }
+        input:hover{
+          color: yellow;
+        }
+        .label{
+          font-weight: bolder;
+          font-size: 20px;
+          
+        }
+        .change {
+          padding: 20px;
+          border: 5px solid black;
+        }
+
+        .change:hover{
+          background-color: gray;
+          color: white;
+          border: 5px dashed black;
+        }
+        .parent{
+          animation: example;
+          animation-duration: 3s;
+        }
+        @keyframes example {
+            from {background-color: black;}
+            to {background-color:#005bff ;}
+          }
+          .title{
+            color: white;
+            padding: 10px;
+            border-radius: 20px;
+            background-color: black;
+              position: relative;
+              animation-name: movement;
+              animation-duration: 4s;
+              animation-delay: 2s;
+          }
+          @keyframes movement {
+            0%   {background-color:red; left:0px; top:0px;}
+            25%  {background-color:yellow; left:50px; top:0px;}
+            50%  {background-color:springgreen; left:50px; top:200px;}
+            75%  {background-color:green; left:0px; top:200px;}
+            100% {background-color:black; left:0px; top:0px;}
+          }
+          body{
+            background-color: palevioletred;
+          }
+          .to{
+            font-weight: bolder;
+            font-size: 20px;
+          }
+          .second{
+            border: 5px solid black;
+            padding: 10px;
+          }
+          .choose{
+            padding-left: 50px;
+          }
+          .second:hover{
+            animation: third;
+            animation-duration:8s;
+            animation-delay: 4s;
+          }
+          @keyframes third {
+            0%   {background-color:red;}
+            25%  {background-color:yellow;}
+            50%  {background-color:springgreen; }
+            75%  {background-color:green;}
+            100% {background-color:black;}
+          }
+      </style>
+    </head>
+    
+ 
+  <body>
+    
+    <div class="container parent " style="background-color: #005bff;height: 50rem;" >
+      <div style="padding: 20px;"> 
+      <h1 style="text-align: center;" class="title  m-3" >VIDEO CONVERTER</h1>
+    </div>
+      <div class="m-5">
+      <form action="/convert" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+          <div class = "text-center change" >
+            <label class="label">SELECT YOUR MP4 FILE : </label>
+            <input type="file" name = "inputFile" class="choose"  accept="video/mp4" />
+          </div>
+        </div>
+        <br /><br />
+        <div class="form-group second ">
+          <div class="mt-5">
+            <label for="to" class="to">To : </label>
+          <select class="form-control mt-3" name="to">
+            <option>hls</option>
+            <option>avi</option>
+            <option>webm</option>
+            <option>flv</option>
+
+          </select>
+          </div>
+          <br />
+          <div class="form-group">
+            <button class="btn btn-danger btn-block">
+              Convert
+            </button>
+          </div>
+        </div>
+        
+        
+      </div>
+      </form>
+    </div>
+  </body>
+</html>
